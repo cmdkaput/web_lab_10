@@ -1,4 +1,4 @@
-  .navigation{
+  .navigation, .search-bar{
     display: flex;
     text-align: center;
   }
@@ -28,3 +28,14 @@
     box-shadow: inset 0 0 0 3px #000000;
     transition: 0.4s;
   }
+
+  .search-bar{
+    margin: 20px 0 10px 21%;
+  }
+
+.search-bar input[type="text"] {
+
+  font-size: 14px;
+  border: 2px solid grey;
+  border-radius: 8px;
+}

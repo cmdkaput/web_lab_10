@@ -1,9 +1,9 @@
 .tiles-section{
   text-align: center;
 }
-.ships-exampels {
+  .ships-examples {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     padding: 50px;
   }
@@ -35,4 +35,7 @@
     transition: 0.4s;
   }
 
-  
+  .extra-ships{
+    display: flex;
+    justify-content: space-around;
+  }
