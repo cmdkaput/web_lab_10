@@ -1,5 +1,5 @@
 import React from 'react';
-import './Loader.css'; // Підключаємо стилі для лоадера
+import './Loader.css';
 
 const Loader = () => {
   return (

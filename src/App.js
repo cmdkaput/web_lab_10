@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import ProductPage from "./components/pages/Catalog/ShipPage/ProductPage/ProductPage"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { SearchProvider } from './components/pages/Catalog/SearchContext/SearchContext';
+import CartPage from './components/pages/Cart/CartPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/catalog/shipPage" element={<ProductPage/>}/>
+          <Route path="/cart" element={<CartPage />}/>
         </Routes>
         <Footer />
       </Router>

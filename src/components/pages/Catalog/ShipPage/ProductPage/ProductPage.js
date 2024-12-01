@@ -7,7 +7,6 @@ const ProductPage = () => {
   return (
     <div className="product-page">
       <ProductInfo />
-      <ActionButtons />
     </div>
   );
 };

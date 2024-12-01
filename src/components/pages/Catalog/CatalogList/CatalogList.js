@@ -4,7 +4,7 @@ import ProductCard from '../ProductCard/ProductCard';
 import { useSearch } from '../SearchContext/SearchContext';
 import './CatalogList.css';
 import FilterBar from '../FilterBar/FilterBar';
-import Loader from '../../../Loader/Loader'; // Імпортуємо лоадер
+import Loader from '../../../Loader/Loader';
 import axios from 'axios';
 
 const CatalogList = () => {
@@ -16,10 +16,10 @@ const CatalogList = () => {
     tonnage: '',
     passengers: '',
   });
-  const [isLoading, setIsLoading] = useState(false); // Стан для лоадера
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchProducts = async () => {
-    setIsLoading(true); // Показуємо лоадер перед фетчем
+    setIsLoading(true);
     try {
       const response = await axios.get('http://localhost:5000/api/ships', {
         params: {
@@ -29,26 +29,26 @@ const CatalogList = () => {
           passengers: filters.passengers,
         },
       });
-      setProducts(response.data); // Оновлюємо список продуктів
+      setProducts(response.data);
     } catch (error) {
       console.error('Error fetching data from server:', error);
     } finally {
-      setIsLoading(false); // Приховуємо лоадер після завершення фетчу
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     fetchProducts();
-  }, [searchTerm, filters]); // Виклик фетчу при зміні пошуку чи фільтрів
+  }, [searchTerm, filters]);
 
   const handleApplyFilters = (newFilters) => {
-    setFilters(newFilters); // Оновлення фільтрів
+    setFilters(newFilters);
   };
 
   return (
     <div>
       <FilterBar onApply={handleApplyFilters} />
-      {isLoading ? ( // Умова для відображення лоадера
+      {isLoading ? (
         <Loader />
       ) : (
         <div className="product-list">
@@ -60,7 +60,7 @@ const CatalogList = () => {
               price={product.price} 
               tonnage={product.tonnage} 
               passengers={product.passengers} 
-              image={product.imageUrl} 
+              image={product.image} 
               onShowMore={() => navigate("/catalog/shipPage", { state: { product } })}
             />
           ))}
